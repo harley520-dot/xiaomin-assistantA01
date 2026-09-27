@@ -1,0 +1,12 @@
+{
+  "name": "小敏助教 4092A01",
+  "short_name": "小敏助教",
+  "description": "致理科技大學小敏助教：本機音訊驅動的互動助教 Avatar。",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f8cddd",
+  "theme_color": "#f7c7dc"
+}

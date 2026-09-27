@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7c7dc" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="小敏助教" />
+    <meta name="description" content="致理科技大學小敏助教 4092A01：本機音訊驅動的互動助教 Avatar。" />
+    <title>小敏助教</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css?v=4092A01-layout2" />
+  </head>
+  <body>
+    <main class="stage" aria-label="小敏助教 Avatar">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <img class="school-logo" src="assets/chihlee-logo.png?v=4092A01" alt="致理科技大學" />
+
+      <div class="status-pill" id="statusPill" data-state="idle">
+        <span class="status-dot"></span>
+        <span id="statusText">等待連接</span>
+      </div>
+
+      <section class="assistant-area">
+        <div class="avatar-wrap" id="avatarWrap">
+          <div class="sparkle sparkle-one">✦</div>
+          <div class="sparkle sparkle-two">✦</div>
+          <div class="hair-back"></div>
+          <div class="neck"></div>
+          <div class="body">
+            <div class="collar collar-left"></div>
+            <div class="collar collar-right"></div>
+            <div class="bow"><span></span></div>
+          </div>
+          <div class="ear ear-left"></div>
+          <div class="ear ear-right"></div>
+          <div class="face">
+            <div class="hair-fringe fringe-left"></div>
+            <div class="hair-fringe fringe-mid"></div>
+            <div class="hair-fringe fringe-right"></div>
+            <div class="brow brow-left"></div>
+            <div class="brow brow-right"></div>
+            <div class="eye eye-left"><span></span></div>
+            <div class="eye eye-right"><span></span></div>
+            <div class="blush blush-left"></div>
+            <div class="blush blush-right"></div>
+            <div class="nose"></div>
+            <div class="mouth" id="mouth"><div class="mouth-inner"></div></div>
+          </div>
+          <div class="hair-side hair-side-left"></div>
+          <div class="hair-side hair-side-right"></div>
+          <div class="headset-band"></div>
+          <div class="headset-cup"></div>
+          <div class="headset-mic"></div>
+        </div>
+
+        <div class="name-card">
+          <span class="name">小敏助教</span>
+          <span class="course-display" id="courseDisplay" aria-live="polite"></span>
+        </div>
+
+        <div class="level-meter" aria-label="音訊強度">
+          <span id="levelBar"></span>
+        </div>
+      </section>
+
+      <section class="control-dock" aria-label="控制面板">
+        <div class="actions">
+          <button class="primary" id="connectButton" type="button">
+            <span class="button-icon">▶</span>擷取電腦聲音
+          </button>
+          <button class="secondary mic-button" id="microphoneButton" type="button">用麥克風感應</button>
+          <button class="ghost" id="fullscreenButton" type="button">全螢幕</button>
+        </div>
+
+        <label class="slider-row" for="sensitivity">
+          <span>嘴型靈敏度</span>
+          <input id="sensitivity" type="range" min="0.7" max="3.2" value="1.8" step="0.1" />
+          <output id="sensitivityValue">1.8×</output>
+        </label>
+
+        <label class="course-row" for="courseInput">
+          <span>課程名稱</span>
+          <input id="courseInput" type="text" maxlength="36" placeholder="請輸入課程名稱" autocomplete="off" />
+        </label>
+      </section>
+
+      <div class="version">4092A01</div>
+    </main>
+
+    <video id="capturedVideo" autoplay muted playsinline hidden></video>
+    <script src="app.js"></script>
+  </body>
+</html>
